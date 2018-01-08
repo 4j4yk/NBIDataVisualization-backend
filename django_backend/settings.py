@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     #just api in production...
     'api',
     'rest_framework',
+    #corsheaders
+    'corsheaders',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -53,10 +55,13 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #corsheaders
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 #ROOT_URLCONF = 'django_backend.urls'
-
+CORS_ORIGIN_ALLOW_ALL = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

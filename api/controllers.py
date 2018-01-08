@@ -49,13 +49,6 @@ def home(request):
    return render_to_response('ember/index.html',
                {}, RequestContext(request))
 
-def xss_example(request):
-  """
-  Send requests to xss-example/ to the insecure client app
-  """
-  return render_to_response('xss-example/index.html',
-              {}, RequestContext(request))
-
 class Register(APIView):
     permission_classes = (AllowAny,)
 
