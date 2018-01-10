@@ -5,6 +5,7 @@ Django==1.11
 django-cors-headers==2.1.0
 django-filter==1.1.0
 djangorestframework==3.7.3
+gunicorn==19.7.1
 idna==2.6
 jsonfield==2.0.2
 Markdown==2.6.10
