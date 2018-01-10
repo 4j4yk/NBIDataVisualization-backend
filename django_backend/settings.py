@@ -9,9 +9,8 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
+import dj_database_url
 import os
-import dj-database-url # add this to the top of your file
 from .localsettings import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
