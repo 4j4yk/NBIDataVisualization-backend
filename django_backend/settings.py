@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'rest_framework',
     #corsheaders
     'corsheaders',
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -58,7 +57,6 @@ MIDDLEWARE_CLASSES = [
     #corsheaders
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 #ROOT_URLCONF = 'django_backend.urls'
@@ -130,8 +128,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-# if ENVIRONMENT == 'PROD':
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#if ENVIRONMENT == 'PROD':
+#    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #
 #REST_FRAMEWORK = {
 #    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
@@ -140,8 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static/"),
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'root') 
+
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 100,
@@ -150,4 +147,3 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication'
     ],
 }
-
