@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import dj-database-url # add this to the top of your file
 from .localsettings import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
