@@ -127,7 +127,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 #if ENVIRONMENT == 'PROD':
 #    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #
@@ -135,19 +135,9 @@ USE_TZ = True
 #    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
 #    'PAGE_SIZE': 10
 #}
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static/"),
-# ]
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-# for /static/root/favicon.ico    
-WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'root') 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static/"),
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
