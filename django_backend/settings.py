@@ -9,8 +9,7 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-import dj_database_url
-import os
+import os, dj_database_url
 from .localsettings import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -85,6 +84,9 @@ TEMPLATES = [
 
 # **** Database config stored in localsettings.py ****
 
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
