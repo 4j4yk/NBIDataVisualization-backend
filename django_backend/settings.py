@@ -57,6 +57,7 @@ MIDDLEWARE_CLASSES = [
     #corsheaders
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 #ROOT_URLCONF = 'django_backend.urls'
@@ -147,3 +148,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication'
     ],
 }
+
+STATICFILES_STORAGE
